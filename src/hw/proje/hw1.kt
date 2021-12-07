@@ -1,46 +1,19 @@
 package hw.proje
 
-import java.util.*
 
-//Okonbaeva Turdugul 5/homework
+//Okonbaeva Turdugul 2/homework
 
 
 fun main() {
-    val map = hashMapOf(
-        "Aya" to 777888999, "Maya" to 777444555, "Rose" to 777666111
-    )
-    println("Введите кол-во записей: ")
-    val kolZapisi = readLine().parseToInt()
-    val iterator = (1..kolZapisi).iterator()
-    iterator.forEach {
-        val read = Scanner(System.`in`)
-        println("Введите имя и номер: ")
-        val name = read.next()
-        val phone = read.nextInt()
-        map[name] = phone
-        println(map)
+    val num = readLine()!!.toInt()
+    val x0 = num / 1000 % 10
+    val x1 = num / 100 % 10
+    val x2 = num / 10 % 10
+    val x3 = num % 10
 
-    }
-    do {
-        println("Введите имя: ")
-        val key = readLine()
+    val result = x0+x1 == x2+x3
 
-        if (key in map.keys) {
-            println("$key = ${map[key]}")
-        } else {
-            println("Не найдено")
-        }
-    } while (key != "exit")
-    }
- private fun String?. parseToInt(): Int {
-     if (this == null) return  0
-     if (this == "") return  0
+    println(result)
 
-     return try {
-         this.toInt()
-     } catch (e: NumberFormatException){
-         println("exception = $e")
-         return 0
-     }
 
- }
+}
