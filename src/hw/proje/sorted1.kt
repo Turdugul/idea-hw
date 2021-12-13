@@ -6,7 +6,7 @@ fun main (){
         var sorted = false
         while (!sorted) {
             sorted = true
-            for (i in 0 until arrays.size - 1) {
+            for (i in 0 until arrays.size - 1) { // лишние обходы в конец отсортированной части
                 if (arrays[i] > arrays[i + 1]) {
                     temp = arrays[i]
                     arrays[i] = arrays[i + 1]
