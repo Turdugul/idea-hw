@@ -17,7 +17,7 @@ fun main() {
         "+" -> a + b
         "-" -> a - b
         "*" -> a * b
-        "/" -> a / b
+        "/" -> a / b // будет ошибка при делении на 0, никак не обрабатывается
         else -> "try again"
     }
     println("$sum")
@@ -34,23 +34,23 @@ private fun String?.parseToInt(): Int {
     }
 }
 private fun String.symbols(): String{
-    when (this) {
+    when (this) { // в этом when'е нет смысла
         "+" -> '+'
         "-" -> '-'
         "*" -> '*'
         "/" -> '/'
         else -> "try again"
     }
-    return this
+    return this // в итоге возвращается this
 }
-private fun divide(a: Int, b: Int){
+private fun divide(a: Int, b: Int){ // нигде не используется
     println(checkingForZero(a,b))
 }
 private fun checkingForZero(firstOne: Int, secondOne: Int): String{
     return try {
-        "Sum: numOne/numTwo"
+        "Sum: numOne/numTwo" // здесь нет деления, просто строка "Sum: numOne/numTwo"
     } catch (e: Exception){
-        "you can not divide by zero"
+        "you can not divide by zero" // эта строка никода не вызовется
     }
 }
 //cal
